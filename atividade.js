@@ -7,7 +7,7 @@ let acimaMedia = []
 for (let i = 0; i < 8; i++) {
 
     do {
-        num = parseFloat(prompt("Digite um número"))
+        num = parseFloat(prompt(`Digite o ${i+1} número`))
 
         if (isNaN(num) || num < 0)
             alert("Número Inválido")
