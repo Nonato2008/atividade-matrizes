@@ -1,31 +1,32 @@
-let media = 0
 let num
-let soma = 0
 let numeros = []
-let acimaMedia = []
+let outroNum
+let contador = 0
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < 10; i++) {
 
     do {
-        num = parseFloat(prompt("Digite um número"))
+        num = parseFloat(prompt(`Digite o ${i +1}º número`))
 
         if (isNaN(num) || num < 0)
             alert("Número Inválido")
 
     } while (isNaN(num) || num < 0)
-
-    soma += num
     numeros[i] = num
 }
+do {
+    outroNum = parseFloat(prompt("Digite um número que você deseja saber quantas vezes aparece na sequência"))
 
-media = soma / 8
+    if (isNaN(outroNum) || outroNum < 0) {
+        alert("Número inválido!");
+    }
 
-for (let j = 0; j < 8; j++) {
-    if (numeros[j] > media) {
-        acimaMedia[j] = numeros[j]
+} while (isNaN(outroNum) || outroNum < 0);
+
+for (let j = 0; j < 10; j++) {
+    if (numeros[j] === outroNum) {
+        contador++;
     }
 }
 
-alert(`A media dos números é ${media}`)
-
-alert(`Os números acima da média são ${acimaMedia}`)
+alert(`O número digitado aparece ${contador} vezes`)
