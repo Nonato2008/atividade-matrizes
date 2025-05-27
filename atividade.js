@@ -1,31 +1,22 @@
-let media = 0
+let numeros = []
 let num
 let soma = 0
-let numeros = []
-let acimaMedia = []
 
-for (let i = 0; i < 8; i++) {
 
+for (let i = 0; i < 10; i++) {
     do {
-        num = parseFloat(prompt("Digite um número"))
+        num = parseInt(prompt(`Digite o ${i+1} número`))
+
 
         if (isNaN(num) || num < 0)
             alert("Número Inválido")
 
-    } while (isNaN(num) || num < 0)
 
-    soma += num
+    } while (isNaN(num) || num < 0)
     numeros[i] = num
 }
-
-media = soma / 8
-
-for (let j = 0; j < 8; j++) {
-    if (numeros[j] > media) {
-        acimaMedia[j] = numeros[j]
-    }
+for (let j = 0; j < 10; j++) {
+    if (numeros[j] % 2 === 0)
+        soma += numeros[j]
 }
-
-alert(`A media dos números é ${media}`)
-
-alert(`Os números acima da média são ${acimaMedia}`)
+alert(`A soma dos números pares é ${soma}`)
